@@ -315,4 +315,263 @@ df.to_excel()
 - API integration  
 - Backend development  
 - AI-assisted coding workflows  
+DocSearch Scraping Tutorial
+
+Files Created
+
+1. scrape2.py
+Main Python script used to:
+- Iterate through archive pages
+- Extract article URLs
+- Scrape individual article content
+- Save structured output
+
+2. cache2/ (Directory)
+- Stores cached HTML responses
+- Uses MD5 hash of URLs as filenames
+- Prevents repeated downloads during development
+
+3. urls2.txt
+- Stores extracted article URLs
+- Allows resuming scraping without repeating archive parsing
+
+4. scraped2.json
+Final structured output containing:
+- title
+- body content
+
+5. scraped2.csv (Optional)
+- Alternative export using pandas
+- Tabular representation of scraped content
+
+
+Python Libraries Used
+
+1. httpx
+- Used instead of requests
+- Supports async (if needed later)
+- Allows redirect handling
+- Used with:
+  follow_redirects=True
+  raise_for_status()
+
+2. lxml.html
+- Used for fast and standards-compliant HTML parsing
+- Used XPath expressions for content extraction
+
+3. tqdm
+- Displays progress bar while iterating pages
+
+4. hashlib
+- Used MD5 hashing for safe cache filenames
+
+5. os
+- Directory creation
+- File existence checks
+- Path handling
+
+6. json
+- Saving structured scraped data
+
+7. pandas (optional)
+- Exporting results to CSV
+
+
+Website Scraped
+
+Insider Intelligence archive
+
+- ~369 archive pages
+- ~7000 articles scraped
+
+Structure:
+Archive pages list article links
+
+Each article page contains:
+- Title (H1 with specific class)
+- Body content (within structured div containers)
+
+
+Architecture Flow
+
+1. Loop through archive pages (archive/1 → archive/n)
+2. Extract links containing /content/
+3. Deduplicate links using set
+4. Loop through article URLs
+5. Fetch content using cached_get()
+6. Parse title and body via XPath
+7. Store structured results
+8. Save JSON incrementally
+
+
+Scraping PDFs
+
+Files Created
+
+1. Downloaded PDF Files
+Source: Premier League publications webpage
+
+Approximately 25–30 PDF documents stored in:
+- Local folder (e.g., ./premier_league/)
+- Or Google Drive (if using Colab)
+
+Examples:
+- Premier League Handbook 2021-22.pdf
+- Premier League 2 Handbook.pdf
+- Fixtures PDF
+- Season Preview PDFs
+
+2. pl_interactive_combine.pdf
+- Selected PDF for table extraction
+- Contains ~19 pages
+- Page 18 contains final league standings table
+
+3. table_output.csv
+- Structured CSV extracted from page 18
+- Generated using tabula.convert_into()
+- Contains:
+  Team name
+  Final standings
+  Additional parsed table columns
+
+
+Python Libraries Used (PDF Section)
+
+1. BeautifulSoup (bs4)
+
+Purpose:
+- Parse HTML of webpage
+- Extract anchor tags
+- Filter links ending with ".pdf"
+
+Used with:
+- HTML parser
+- find_all('a')
+
+2. requests
+
+Purpose:
+- Download PDF files
+- Write binary content to disk
+
+3. tabula
+
+Purpose:
+- Read tables from PDFs
+- Convert extracted tables into DataFrame
+- Export directly to CSV
+
+Important Functions:
+- read_pdf()
+- convert_into()
+
+Parameters Used:
+- pages=18
+- pages="all"
+- area=[top, left, bottom, right]
+- output_format="csv"
+
+4. pandas (optional)
+
+Purpose:
+- Store extracted tables
+- Inspect DataFrame before saving
+
+
+Website Used
+
+Premier League Publications Page
+
+Contains:
+- Multiple season handbooks
+- Fixtures PDFs
+- League documentation
+
+
+Workflow Architecture
+
+Step 1
+Parse webpage using BeautifulSoup
+
+Step 2
+Extract all links ending with ".pdf"
+
+Step 3
+Generate filename using:
+link.split("/")[-1]
+
+Step 4
+Download each PDF and store locally
+
+Step 5
+Use tabula.read_pdf() to extract tables
+
+Step 6
+Refine extraction using:
+- Specific page number
+- area parameter
+
+Step 7
+Convert cleaned table into CSV
+
+
+Vibe Coding
+
+Files
+
+1. main.py
+Core application file where the primary logic of the project was implemented.
+Handled:
+- user input
+- API calls
+- output rendering
+
+2. requirements.txt
+Contained all required Python dependencies such as:
+- requests
+- fastapi / flask (for backend handling)
+- openai (for AI-assisted coding)
+- pandas (for data handling)
+
+3. .env
+Stored environment variables such as:
+- API keys
+- configuration settings
+
+4. README.md
+Documented:
+- project overview
+- setup instructions
+- usage steps
+
+
+APIs Used
+
+1. OpenAI API
+Used for:
+- AI-assisted code generation
+- prompt-based responses
+- automation support
+
+2. REST APIs
+Demonstrated how to:
+- Send GET and POST requests
+- Handle JSON responses
+- Integrate third-party services into applications
+
+3. GitHub API (Conceptual Demonstration)
+Showed how:
+- repositories
+- commits
+- automation workflows
+can be managed programmatically
+
+
+Tools & Platforms
+
+- VS Code
+- GitHub
+- Postman (for API testing)
+- Python
+- AI coding assistants
 
