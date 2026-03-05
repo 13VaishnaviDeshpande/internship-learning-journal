@@ -1,368 +1,610 @@
-# Get the Data – Web Scraping Learnings
+# Module 4 – Learnings
 
---------------------------------------------------
+---
 
-1. Scraping with Excel
+# Get the Data – Scraping with Excel
 
-Learnings
-- Extracted live data from websites directly into Excel using Power Query
-- Used Data Tab → Get Data → From Web
-- Connected to a website by pasting a URL
-- Identified available tables from the webpage
+## Learnings
+This session introduced how to extract live data from websites directly into Excel using the Power Query feature.
 
-Data Transformation
-- Used Query Editor to:
+### I learned how to:
+- Import web data using:
+  - **Data Tab → Get Data → From Web**
+- Paste a website URL to establish a connection
+- Identify available tables from a webpage
+- Use the **Query Editor** to:
   - Preview data
   - Remove unnecessary columns
   - Transform data before loading
-- Understood "Applied Steps":
+- Understand the **Applied Steps** section
   - Each transformation is recorded step-by-step
+- Load the cleaned table into Excel
+- Refresh the data to fetch updated values from the website
 
-Data Loading
-- Loaded cleaned table into Excel
-- Used Refresh to fetch updated data from the website
-
-Key Understanding
-- Excel can act as a lightweight web scraping tool
+### Key Understanding
+- Excel can act as a **lightweight web scraping tool**
 - Data remains connected to the original source
 - Refresh updates the dataset dynamically
-- Transformations are automatically reapplied
+- Transformations are stored and automatically reapplied during refresh
 
-Practical Use Case
-- Imported Two Week Weather Forecast for Chennai
+### Practical Use Case
+Imported: **Two Week Weather Forecast for Chennai**
 
-Applications
-- Data analysis
-- Visualization
-- Dashboard creation
-- Trend analysis
+This data can now be:
+- Analyzed
+- Visualized
+- Used for dashboards
+- Used for trend analysis
 
---------------------------------------------------
+---
 
-2. Scraping with Python (IMDB)
+# Get the Data – Scraping with Python
 
-Learnings
-- Introduced web scraping using Python
-- Extracted structured data from IMDB
+## What I Learned
+This session introduced web scraping using Python to extract structured data from IMDB.
 
-Libraries Used
-- requests
-- BeautifulSoup
-- pandas
+### I learned how to:
+Import essential Python libraries:
 
-Technical Workflow
-- Fetched webpage using requests
-- Parsed HTML using BeautifulSoup
-- Inspected webpage using browser developer tools
+- `requests`
+- `BeautifulSoup`
+- `pandas`
 
-HTML Understanding
-- Identified:
-  - Tag names
-  - Class names
-  - Nested structure
-- Understood hierarchy:
-  - Parent containers hold multiple records
-  - Child elements store specific values
+Steps performed:
 
-Data Extraction
-- Movie Title → a.text
-- Movie Year → span.text
-- Rating → strong.text
+1. Fetch webpage content using `requests`
+2. Parse HTML using `BeautifulSoup`
+3. Inspect webpage elements to identify:
+   - Tag names
+   - Class names
+   - Nested structure
 
-Data Processing
-- Stored extracted data in lists
-- Converted lists into pandas DataFrame
-- Displayed structured output
+### Understand HTML hierarchy
+- Higher-level containers hold multiple records
+- Lower-level tags hold specific data
 
-Key Understanding
-- Webpages are structured using HTML
-- Correct tag identification is essential
-- Higher-level containers enable bulk extraction
-- pandas converts raw data into structured format
+### Extract data using:
 
-Practical Outcome
-- Converted IMDB Top Movies list into structured table
+- `a.text` → Movie title  
+- `span.text` → Movie year  
+- `strong.text` → Rating  
 
-Applications
+### Data Processing
+- Store extracted data in lists
+- Convert lists into a **pandas DataFrame**
+- Display structured tabular output
+
+### Key Understanding
+- Web pages are structured using HTML tags
+- Scraping requires identifying correct parent and child tags
+- Using higher-level containers allows extraction of multiple records
+- `pandas` helps convert unstructured scraped data into structured format
+
+### Practical Outcome
+Successfully converted **IMDB Top Movies list** into a clean table format for:
+
 - Data analysis
 - Visualization
 - Further processing
 
---------------------------------------------------
+---
 
-3. Wikipedia Data Extraction
+# Get the Data – Wikipedia
 
-Learnings
-- Used wikipedia Python library for structured data extraction
-- Avoided manual HTML scraping
+## What I Learned
+This session introduced the use of the **Wikipedia Python library** to extract structured data directly from Wikipedia.
 
-Concepts Covered
-- Installed external libraries using pip
-- Used search() to find pages
-- Used summary() for concise information
-- Limited summary using sentences parameter
-- Used page() for full article data
+Instead of manually scraping HTML, the library provides built-in functions to access:
 
-Data Access
-- Extracted:
-  - URL
-  - References
-  - Images
+- Search results
+- Page summaries
+- Full article content
+- References
+- Images
+- URLs
+- Tables
 
-Table Extraction
-- Used HTML content with pandas.read_html()
-- Selected tables using index
+### Concepts Understood
 
-Key Understanding
-- Wikipedia library simplifies data extraction
-- Provides structured access to information
-- Tables are stored as lists
-- Requires trial-and-error for correct table selection
+Install external Python libraries using:
 
-Practical Outcome
-- Extracted structured knowledge data for:
-  - Research
-  - Data analysis
-  - Academic work
-  - Automation
+```bash
+pip install wikipedia
+```
 
---------------------------------------------------
+### Functions Used
 
-4. Scraping BBC Weather with Python
+Search for pages:
 
-Learnings
-- Extracted structured weather data from BBC Weather
+```
+search()
+```
 
-Core Concepts
-- Web scraping retrieves HTML content
-- requests fetches webpage data
-- BeautifulSoup parses HTML
-- Browser Inspect tool helps identify structure
+Retrieve summaries:
 
-Technical Workflow
-- Used find_all() to extract multiple elements
-- Processed lists to extract required data
+```
+summary()
+```
 
-Data Cleaning
-- Used:
-  - String splitting
-  - Indexing
-  - Regular expressions
-- Converted text to numerical values
-- Handled special characters (degree symbol)
+Limit summary length:
 
-Data Structuring
-- Generated date column using pandas
-- Combined lists into DataFrame
+```
+sentences parameter
+```
 
-Data Export
-- Saved output to:
-  - CSV
-  - Excel
+Retrieve full article details:
 
-Key Takeaways
-- requests → Fetch HTML
-- BeautifulSoup → Extract data
-- Data cleaning is essential
-- Structured datasets enable analysis
-- Legal considerations must be followed
+```
+page()
+```
 
-Practical Outcome
-- Created 14-day weather dataset for Mumbai
+Access page attributes:
 
-Applications
+- `.url`
+- `.references`
+- `.images`
+
+Extract tables using:
+
+- HTML content
+- `pandas.read_html()`
+
+### Key Understanding
+- Wikipedia library abstracts HTML complexity
+- Provides structured access to knowledge data
+- Tables on Wikipedia are stored as lists
+- Trial-and-error may be required to select the correct table index
+
+### Practical Outcome
+Efficiently extracted structured knowledge data for:
+
+- Research
+- Data analysis
+- Academic projects
+- Automation tasks
+
+---
+
+# Get the Data – Scrape BBC Weather with Python
+
+## What I Learned
+This session focused on scraping structured weather data from the **BBC Weather website** using Python.
+
+### Key Concepts Understood
+- Web scraping involves extracting raw HTML from websites
+- `requests` fetches HTML content from web servers
+- `BeautifulSoup` parses HTML and allows element extraction
+
+### Browser Inspect Tool Helps Identify
+- Tag names
+- Class names
+- Element hierarchy
+
+### Technical Learnings
+
+Use `find_all()` to retrieve multiple elements.
+
+Clean unwanted text using:
+
+- String splitting
+- Indexing
+- Regular expressions
+
+Other steps:
+
+- Convert extracted text into numerical format
+- Handle special characters like degree symbols
+- Generate date column dynamically using pandas
+- Combine lists into a structured DataFrame
+- Export results to CSV and Excel formats
+
+### Key Takeaways
+
+- `requests` → Fetches HTML  
+- `BeautifulSoup` → Extracts information from HTML  
+- Data cleaning is essential during scraping  
+- Scraped data can be structured and stored for analysis  
+- Legal considerations must be checked before scraping
+
+### Practical Outcome
+Created a **clean 14-day weather forecast dataset for Mumbai**, ready for:
+
 - Data analysis
 - Forecast comparison
 - Visualization
-- Data storage
+- Storage for future processing
+
+---
 
 # GitHub Actions – Scheduling & Automation
-- Core Learning: GitHub Actions allows automation of workflows based on events such as push, pull request, or schedule (cron).
+
+## Core Learning
+GitHub Actions allows automation of workflows based on events such as:
+
+- push
+- pull request
+- schedule (cron)
+
+### Key Concepts Learned
+
 - Workflows must be inside `.github/workflows/`
-- YAML syntax is used to define jobs and triggers
+- YAML syntax defines jobs and triggers
 - Cron expressions define time-based execution
-- All schedules run in UTC timezone
-- GitHub does NOT guarantee exact execution timing
-- Cron Format: `Minute Hour Day Month Day-of-week`
-- Example: `*/5 * * * *` → Runs every 5 minutes
-- Insight: Scheduled workflows are not suitable for real-time monitoring due to delays
-- Applications:
-  - Automated deployments
-  - Dependency scanning
-  - Security checks
-  - Monthly reports
-  - Periodic backups
-- Takeaway: Design automation with execution delays in mind
+- All schedules run in **UTC timezone**
+- GitHub does **NOT guarantee exact execution timing**
+
+### Cron Structure
+
+```
+Minute Hour Day Month Day-of-week
+```
+
+Example:
+
+```
+*/5 * * * *
+```
+
+Runs every **5 minutes**
+
+### Important Insight
+Even if scheduled every 5 minutes, GitHub may delay execution due to internal queueing.
+
+Scheduled workflows should **not be used for real-time monitoring**.
+
+### Practical Applications
+
+- Automated deployments
+- Dependency scanning
+- Security checks
+- Monthly reports
+- Periodic backups
+
+### Major Takeaway
+Automation is powerful but must account for execution delays.
+
+---
 
 # Screen Scraping with Gemini – Vision-Based Data Extraction
-- Core Learning: Use video frames instead of HTML scraping for structured data extraction
-- Recording at 1 FPS converts video into analyzable images
-- Each frame ~250 tokens
-- JSON mode required for structured output
-- Cost-efficient (1000 frames ≈ few cents)
-- Advantages:
-  - Works on dynamic websites
-  - No DOM parsing required
-  - Handles JS-rendered content
-- Limitations:
-  - Depends on visible content
-  - Not real-time
-  - May skip frames
-- Insight: Shift from code-based scraping → vision-based extraction
 
-# Microsoft MarkItDown – Document Standardization
-- Core Learning: Converts files into Markdown for LLM-friendly processing
-- Why Markdown:
-  - Lightweight
-  - Easy to chunk
-  - Ideal for RAG
-- Modes:
-  - Without LLM → fast parsing
-  - With LLM → OCR + better formatting
-- Applications:
-  - Enterprise document cleaning
-  - Knowledge base creation
-  - Dataset generation
-- Takeaway: Data preprocessing is critical for LLM performance
+## Core Learning
+Instead of scraping HTML using BeautifulSoup or Selenium, screen content can be recorded and analyzed by a multimodal LLM.
+
+### Technical Insights
+
+- Recording **1 frame per second** converts each second into an image
+- Gemini processes videos as sequential frames
+- Each frame costs tokens (~250 tokens per image)
+- JSON mode should be enabled for structured output
+- Method relies on **computer vision instead of DOM parsing**
+
+### Cost Efficiency
+Even **1000 frames cost only a few cents**.
+
+### Advantages
+- Works on dynamic websites
+- Bypasses HTML complexity
+- Handles JavaScript-rendered content
+- No browser automation required
+
+### Limitations
+- Depends on visible content
+- Fast scrolling may skip information
+- Not ideal for high-speed scraping
+
+### Major Insight
+Vision-based extraction using AI can sometimes replace traditional scraping logic.
+
+Shift observed:
+
+**Code-based automation → Vision-based automation**
+
+---
+
+# Microsoft MarkItDown – Document Standardization for LLMs
+
+## Core Learning
+MarkItDown converts multiple file formats into **clean Markdown**, making documents suitable for LLM pipelines.
+
+### Why Markdown
+- Lightweight
+- Human-readable
+- Platform-independent
+- Easy for embedding chunking
+- Ideal for RAG pipelines
+
+### Modes of Operation
+
+**Without LLM**
+- Direct parsing
+- Fast conversion
+- Suitable for structured PDFs
+
+**With LLM**
+- Enables OCR
+- Understands layout
+- Improves formatting quality
+
+### Applications
+- Preparing enterprise documents
+- Cleaning PDFs
+- Knowledge base preparation
+- Dataset generation
+- RAG system pipelines
+
+### Major Takeaway
+Unstructured data must be standardized before feeding into AI systems.
+
+---
 
 # Nominatim – Geocoding with OpenStreetMap
-- Core Learning: Converts text locations into structured geographic data
-- Powered by OpenStreetMap
-- Requires `user_agent`
-- Returns structured JSON
-- Extractable:
-  - Latitude / Longitude
-  - Address
-  - Bounding box
-  - Class / Type
-- Applications:
-  - Mapping
-  - Delivery systems
-  - Geo-tagging
-- Takeaway: Text → Geographic intelligence
 
-# Overall Technical Insights
-- Automation enables scalable DevOps workflows
-- Vision-based scraping reduces dependency on HTML parsing
-- Markdown improves LLM pipelines
+## Core Learning
+Geocoding converts text-based location names into structured geographic data.
+
+Example:
+
+```
+"IIT Madras" → Latitude, Longitude, Full Address
+```
+
+### Key Technical Points
+
+- Powered by **OpenStreetMap**
+- `geopy` acts as Python wrapper
+- `user_agent` parameter is mandatory
+- Returns structured JSON data
+- Includes class and type categorization
+
+### Extractable Data
+
+- Latitude
+- Longitude
+- Display name
+- Bounding box
+- Class (tourism, amenity, etc.)
+- Type (university, attraction, hospital)
+
+### Applications
+
+- Mapping applications
+- Location analytics
+- Delivery systems
+- Geo-tagging datasets
+- Urban planning
+
+### Major Takeaway
+Unstructured address text → **Structured geographic intelligence**
+
+---
+
+# OVERALL TECHNICAL INSIGHTS FROM ALL SESSIONS
+
+- Automation (GitHub Actions) enables scheduled DevOps workflows
+- Vision-based scraping reduces dependency on traditional HTML parsing
+- Document conversion to Markdown improves LLM processing
 - Geocoding enables spatial intelligence
-- Structured outputs (JSON/Markdown) are essential
-- Data preprocessing directly impacts AI performance
+- Structured outputs (JSON / Markdown) enable scalable AI systems
+- Data preprocessing strongly impacts AI/ML performance
+
+---
 
 # DocSearch Scraping Tutorial
 
-## Semantic vs Keyword Search
-- Keyword search → exact match
-- Semantic search → meaning via embeddings
-- Enables intelligent search systems
+## 1. Semantic Search vs Keyword Search
 
-## Caching Strategy
-- Save HTML locally
-- Avoid repeated downloads
-- Faster debugging
-- Resume-safe scraping
-- Pattern:
-  - If exists → load
-  - Else → fetch + save
+Keyword search → matches exact words  
+Semantic search → uses embeddings to understand meaning
 
-## Scraping Workflow
-- Extract archive URLs
-- Collect article links
-- Deduplicate
-- Fetch content
-- Parse data
-- Store output
-- Principle: Small steps > complex logic
+Scraped data enabled building a **semantic proof-of-concept search engine**.
 
-## XPath Usage
-- Use DevTools for inspection
-- Target stable containers
-- Use `contains()` instead of exact matches
+---
 
-## Debugging Techniques
-- Print variables frequently
-- Use breakpoints
-- Rubber duck debugging
+## 2. Caching is Critical During Development
 
-## Using LLMs Effectively
-- Ask specific questions
-- Mention tools/libraries
-- Request concise code
+`cached_get()` pattern:
 
-## Proof of Concept
-- Working demos > presentations
-- Faster validation and deployment
+- Saves HTML responses locally
+- Prevents repeated downloads
+- Speeds up debugging
+- Allows safe interruption and resume
 
-## Incremental Saving
-- Save JSON inside loop
-- Prevent data loss
-- Enable early inspection
+Core idea:
 
-## Edge Case Handling
+```
+If cache exists → load
+Else → fetch → save → return
+```
+
+Principle:
+
+**Laziness, impatience, and hubris are programmer virtues**
+
+---
+
+## 3. Scraping Strategy
+
+Stages:
+
+1. Get archive page URLs
+2. Extract article links
+3. Deduplicate links
+4. Fetch article pages
+5. Parse structured content
+6. Store structured output
+
+Small correct steps > Big complex logic
+
+---
+
+## 4. XPath > Guesswork
+
+Use browser DevTools:
+
+- Inspect elements
+- Identify stable container divs
+- Avoid sidebars and popups
+- Use `contains()` in XPath
+- Expect trial and error
+
+---
+
+## 5. Debugging Techniques
+
+### Print Liberally
+Print variables frequently.
+
+### Use Breakpoints
+Use `breakpoint()` or debugger.
+
+### Rubber Ducking
+Explain the problem clearly.
+
+---
+
+## 6. Use LLMs Properly
+
+Two modes:
+
+- Implementation questions
+- Troubleshooting strategy questions
+
+Best practices:
+
+- Be specific
+- Mention libraries
+- Ask for readable code
+
+---
+
+## 7. Proof of Concept > Presentation
+
+A working demo:
+
+- Converts clients faster
+- Demonstrates capability
+- Enables faster production deployment
+
+**Portfolio > Certificates**
+
+---
+
+## 8. Save Incrementally
+
+Write JSON output inside loops.
+
+Benefits:
+
+- Inspect progress early
+- Avoid losing hours of scraping
+- Enable modular development
+
+---
+
+## 9. Handle Edge Cases
+
+Expect:
+
 - Redirects
 - Empty responses
+- Class name mismatches
 - Deduplication issues
-- Imperfect HTML
 
-## Insight
-- Rapid prototyping creates advantage
-- Small projects → big opportunities
+Real-world scraping requires resilience.
+
+---
 
 # Scraping PDFs
 
-## Extracting PDFs
-- Use BeautifulSoup
-- Filter `.pdf` links
-- Extract filenames via `split("/")[-1]`
+## Extracting PDFs from Webpages
 
-## File Handling
-- Create directories
-- Save in binary mode
-- Automate downloads
+- Use BeautifulSoup to parse HTML
+- Extract anchor tags
+- Filter links ending in `.pdf`
+- Generate filenames using:
 
-## Table Extraction
-- Use Tabula
-- `read_pdf()` for reading
-- `convert_into()` for CSV
+```
+link.split("/")[-1]
+```
 
-## Issues Faced
-- Incorrect table detection
-- Layout misinterpretation
-- Extra content included
+Automates downloading multiple PDFs.
 
-## Solution
-- Use `area=[top, left, bottom, right]`
-- Restrict extraction region
+---
 
-## Key Learnings
-- Layout matters in PDFs
-- Always inspect extracted data
-- Fine-tuning improves accuracy
+## Reading Tables from PDFs
 
-## Workflow
-- Webpage → PDF → Table extraction → Cleaning → CSV
+Use **Tabula**
+
+Example parameters:
+
+```
+pages=18
+pages="all"
+```
+
+---
+
+## Problem: Extra Content
+
+Tabula may detect multiple sections incorrectly.
+
+Example:
+
+Newcastle United **"125 years"** text mistakenly extracted.
+
+---
+
+## Solution: Area Parameter
+
+```
+area=[top, left, bottom, right]
+```
+
+Restricts extraction region for cleaner tables.
+
+---
+
+## Direct CSV Conversion
+
+Use:
+
+```
+convert_into()
+```
+
+Benefits:
+
+- Direct CSV export
+- Faster pipeline
+
+---
 
 # Vibe Coding
 
-## Core Concepts
+## Core Concepts Learned
+
 - Idea-first development
-- AI-assisted rapid prototyping
-- Prompt-driven coding
+- Rapid prototyping
+- AI-assisted coding
+- Effective prompt engineering
 
 ## Technical Learnings
+
 - API integration in Python
 - JSON handling
-- Secure API key management
-- Scalable project structure
+- Secure API key storage
+- Project structuring
 - Debugging AI-generated code
 
-## Practical Skills
+## Practical Skills Gained
+
 - Product-oriented thinking
-- Breaking problems into modules
+- Modular problem solving
 - Faster development workflows
 - Writing maintainable code
 
-## Outcome
-- Improved confidence in building applications
-- Better understanding of AI-assisted development
-- Stronger problem-solving and logical thinking
+## Overall Outcome
+
+The workshop improved confidence in building applications rapidly using modern development practices.
+
+AI enhances productivity, but **logical thinking and structured problem solving remain essential**.
