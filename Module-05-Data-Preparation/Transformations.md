@@ -1,534 +1,592 @@
 # Excel Data Cleaning
 
 ## Text Transformations
-- Removed the unwanted suffix **"[more]"** using the **Find & Replace** feature.
-- Used the **TRIM()** function to eliminate extra internal spaces within text values.
+1. Removed unnecessary suffixes such as "[more]" by using the Find & Replace feature.
+2. Applied the TRIM() function to eliminate unwanted spaces within text values.
 
 ## Structural Transformations
-- Deleted rows containing blank values in important fields.
-- Removed duplicate entries in the **Country** column to maintain unique records.
+1. Deleted rows containing blank values in key columns.
+2. Eliminated duplicate country entries so that only unique records remained.
 
 ## Data Type Transformations
-- Converted numeric columns from **General** format to **Number** format.
-- Standardized numeric values to display **two decimal places**.
+1. Converted columns containing numbers from "General" format to "Number".
+2. Adjusted decimal formatting to maintain consistent precision across the dataset.
 
 ## Data Quality Improvements
-- Corrected inconsistent text formatting.
-- Ensured numeric values were interpreted correctly.
-- Reduced redundant data entries.
-- Removed incomplete rows to improve dataset reliability.
+1. Standardized inconsistent text formats.
+2. Ensured numeric fields were interpreted correctly.
+3. Reduced redundancy within the dataset.
+4. Removed incomplete or partially filled records.
 
 ---
 
-# Excel Data Transformation
+# Data Transformation in Excel
 
 ## 1. Ratio Calculations
 
-### A. Metro Area to City Area Ratio
-**Formula used**
-
+### A. Metro Area vs City Area Ratio
+- Formula used:
 ```
 =G2/D2
 ```
-
-**Purpose**
-
-Measure the extent of metropolitan expansion compared to the core city boundary.
-
-**Example Insight**
-
-Tokyo’s metropolitan area is approximately **6 times larger** than its city area.
-
-Some calculation errors occurred where metro area data was missing.
+- Purpose: Evaluate how large the metropolitan area is compared to the city limits.
+- Example insight: Tokyo’s metropolitan region is roughly six times the size of its city boundary.
+- Missing metro area values resulted in calculation errors for some rows.
 
 ---
 
-### B. Metro Population to City Population Ratio
-
-**Formula used**
-
+### B. Metro Population vs City Population Ratio
+- Formula used:
 ```
 =F2/C2
 ```
-
-**Purpose**
-
-Compare metropolitan population with the population of the main city.
-
-**Example Insight**
-
-Tokyo’s ratio is approximately **2.76**, indicating a much larger population in the metro region.
-
-The formula was applied to the entire column using **AutoFill (double-click)**.
+- Purpose: Measure the difference between metropolitan population and core city population.
+- Example insight: Tokyo produced a ratio close to 2.76.
+- Values were filled automatically using Excel’s AutoFill feature.
 
 ---
 
 ### C. Density Comparison (Crowding Indicator)
-
-This comparison was derived from the relationship between:
-
-- **Metro Area / City Area Ratio**
-- **Metro Population / City Population Ratio**
-
-**Purpose**
-
-Evaluate how population density differs between metropolitan areas and city centers.
+- Calculated using the relationship between:
+  - Metro Area / City Area
+  - Metro Population / City Population
+- This helps estimate differences in population concentration between city centers and metropolitan regions.
 
 ---
 
 ## 2. Pivot Table Transformations
 
 ### Creating the Pivot Table
-
-Steps:
-
-1. Select the complete dataset.
-2. Navigate to **Insert → Pivot Table**.
-3. Place the Pivot Table in a **new worksheet**.
+1. Highlight the entire dataset.
+2. Navigate to Insert → Pivot Table.
+3. Create the pivot table in a new worksheet.
 
 ---
 
-### A. Country-Level Aggregation
-
-- Drag **Country** into the **Rows** section.
-- Drag **Country** again into the **Values** section and set the calculation to **Count**.
-
-**Purpose**
-
-Identify how frequently each country appears in the dataset.
-
-**Example**
-
-- China appeared **20 times**.
-- Angola appeared **once**.
+### A. Aggregation by Country
+- Added **Country** to the Rows section.
+- Inserted **Country** again in the Values section as **Count**.
+- This revealed how often each country appeared in the dataset.
+  - Example: China appeared about 20 times.
+  - Angola appeared only once.
 
 ---
 
 ### B. City-Level Aggregation
-
-Steps:
-
-- Place **City** below **Country** in the Rows area.
-- Add **City Proper Population** to the **Values** section.
-- Change aggregation to **Sum**.
-
-**Output**
-
-- Population totals at the **city level**.
-- Aggregated population values at the **country level**.
+- Placed **City** under the Country row grouping.
+- Added **City Proper Population** to the Values section.
+- Set the aggregation to **Sum**.
+- This displayed both individual city population and total population by country.
 
 ---
 
 ## 3. Chart-Based Insights
-
-A **bar chart** was generated from the Pivot Table.
-
-Filters were applied to analyze individual countries such as **China** and the **United States**.
-
-**Observations**
-
-- In China, **Chongqing** and **Shanghai** showed the highest population values.
-- In the United States, **Los Angeles** showed the highest crowding ratio.
+1. Created a bar chart from the pivot table results.
+2. Applied filters to analyze specific countries such as China and the United States.
+3. Observed outliers:
+   - Chongqing and Shanghai showed extremely high population values in China.
+   - Los Angeles showed high density ratios within the United States.
 
 ---
 
 # Text to Columns in Excel
 
 ## Structural Transformations
-
-- Converted raw text from a **single column** into multiple structured columns.
-- Extracted categorical fields from combined text strings.
+1. Converted raw text stored in a single column into multiple structured columns.
+2. Extracted different categorical variables from combined strings.
 
 ---
 
 ## Delimiter-Based Transformations
+Different delimiters were used to separate the data:
 
-Different delimiters were used to separate data fields:
-
-| Delimiter | Extracted Field |
-|-----------|----------------|
-| "("       | Senator Name |
-| "-"       | Party |
-| ")"       | State |
-| ","       | Vote Status |
+1. "(" separated the **Senator Name**.
+2. "-" extracted the **Political Party**.
+3. ")" extracted the **State**.
+4. "," separated the **Vote Status**.
 
 ---
 
 ## Data Structuring
-
-- Converted unstructured web data into a structured tabular format.
-- Created clear column headers for each field.
-- Removed unnecessary columns created during the splitting process.
+1. Converted messy web-scraped text into a structured tabular format.
+2. Created appropriate column headers.
+3. Removed extra columns generated during the splitting process.
 
 ---
 
 ## Analytical Readiness
-
-- Transformed scraped text into a **CSV-like dataset**.
-- Enabled **sorting, filtering, and aggregation** operations.
-- Prepared the dataset for further analysis or visualization.
+1. Converted raw text data into a structured dataset similar to CSV format.
+2. Enabled filtering, sorting, and aggregation.
+3. Prepared the dataset for further analysis and visualization.
 
 ---
 
 # Data Aggregation in Excel
 
-## 1. Weekly Aggregation with Pivot Table
+## 1. Weekly Aggregation using Pivot Table
 
-### Objective
-
-- Calculate the **sum of New Cases**
+Objective:
+- Calculate the sum of **New Cases**
 - Group results by **Country and Week**
 - Separate results by **Year (2020 and 2021)**
 
 ### Pivot Configuration
+- Rows → Location (Country)
+- Columns → Week
+- Values → Sum of New Cases
+- Filter/Grouping → Year
 
-- **Rows:** Location (Country)
-- **Columns:** Week
-- **Values:** Sum of New Cases
-- **Filter/Grouping:** Year
-
-### Insight
-
-Revealed **weekly COVID-19 case trends across different countries**.
+Insight:
+This arrangement revealed weekly COVID case trends across different countries.
 
 ---
 
-## 2. Monthly Aggregation with Pivot Table
+## 2. Monthly Aggregation using Pivot Table
 
-### Objective
-
-- Calculate **sum of New Cases**
-- Group data by **Month and Country**
-- Separate results by **Year**
+Objective:
+- Aggregate new cases by month and country.
 
 ### Pivot Configuration
+- Rows → Year → Month
+- Columns → Location
+- Values → Sum of New Cases
 
-- **Rows:** Year → Month
-- **Columns:** Location
-- **Values:** Sum of New Cases
-
-### Insight
-
-Highlighted **monthly waves of COVID-19 infections**.
+Insight:
+The pivot table highlighted monthly waves of COVID infections.
 
 ---
 
 ## 3. Color Scales (Conditional Formatting)
 
-### Purpose
+Purpose:
+Highlight regions with high or low numbers of cases.
 
-Identify clusters of high and low infection rates.
-
-### Configuration
-
+Configuration:
 3-Color Scale:
+- Green → Lower case counts
+- Yellow → Medium levels
+- Red → Higher case counts
 
-- **Green** → Low cases
-- **Yellow** → Medium cases
-- **Red** → High cases
-
-### Insight
-
-Allowed visual identification of infection waves and patterns.
+Insight:
+Visual clustering made infection waves easier to observe.
 
 ---
 
 ## 4. Sparklines (Trend Visualization)
 
-### Purpose
+Purpose:
+Display weekly trends of new cases for each country.
 
-Display **weekly case trends** for each country.
+Steps:
+1. Insert → Line Sparkline
+2. Select the weekly data range
+3. Enable markers for high and low points
 
-### Steps
-
-1. Insert → **Line Sparkline**
-2. Select weekly aggregated values as the data range
-3. Enable **High Point** and **Low Point** markers
-
-### Insight
-
-Provided quick comparison of trends across years, including **India’s peak around mid-2021**.
+Insight:
+Quickly compared trends across countries and years, such as India’s peak in mid-2021.
 
 ---
 
-## 5. Data Bars (Visual Comparison)
+## 5. Data Bars (Visual Indicators)
 
-### Purpose
+Purpose:
+Provide graphical representation of monthly case totals.
 
-Provide graphical representation of **monthly aggregated values**.
+Steps:
+1. Select pivot values.
+2. Apply Conditional Formatting → Data Bars.
+3. Use gradient or solid styles.
 
-### Steps
-
-- Select pivot table values
-- Apply **Conditional Formatting → Data Bars**
-- Use gradient or solid fills
-
-### Insight
-
-Made it easier to observe **peaks and declines in case counts across months**.
+Insight:
+Wave patterns across months became easier to recognize.
 
 ---
 
 ## Result
-
-The raw COVID dataset was transformed into:
-
-- Weekly and monthly aggregated summaries
+The original COVID dataset was transformed into:
+- Weekly and monthly summary tables
 - Visual trend indicators
-- Cluster identification tools
-- Comparative analysis across countries and years
+- Tools for identifying clusters and patterns
+- Comparative insights across countries and years
 
 ---
 
-# Data Preparation Using Shell Commands
+# Data Preparation using Shell Commands
 
 ## 1. File Retrieval
+Downloaded a web log dataset from a remote server using the `curl` command.
 
-Downloaded the web log dataset from a remote server using the **curl** command.
-
-**Result**
-
-Obtained a compressed log file for analysis.
+Result:
+A compressed dataset ready for processing.
 
 ---
 
 ## 2. File Decompression
+Used `gzip` to convert the `.gz` archive into a readable log file.
 
-Used **gzip** to convert the compressed `.gz` file into a readable log file.
-
-**Transformation**
-
-Compressed file → Plain text log data.
+Transformation:
+Compressed file → Plain text dataset.
 
 ---
 
-## 3. Dataset Inspection
+## 3. Data Inspection
+Used `head` and `tail` commands to preview the first and last lines of the dataset.
 
-Used **head** and **tail** commands to preview the beginning and end of the dataset.
-
-**Purpose**
-
-Understand file structure without opening the entire dataset.
+Purpose:
+Understand the structure of the log entries.
 
 ---
 
 ## 4. Record Counting
+Applied the `wc -l` command to count the total number of entries.
 
-Used:
-
-```
-wc -l
-```
-
-**Purpose**
-
-Determine the total number of requests recorded in the log file.
+Insight:
+Total number of requests recorded during the month.
 
 ---
 
 ## 5. Field Extraction
+Used the `cut` command to isolate specific columns.
 
-Used the **cut** command to extract specific columns.
+Example:
+Extracted IP addresses from the first field.
 
-Example: Extracted **IP addresses** from the first column.
-
-**Transformation**
-
-Multi-field log file → Single-column IP dataset.
+Transformation:
+Multi-column log → Single-column IP dataset.
 
 ---
 
 ## 6. Sorting and Frequency Analysis
-
-Command pipeline used:
+Executed a pipeline of commands:
 
 ```
 cut → sort → uniq → sort
 ```
 
-**Purpose**
+Transformation:
+Raw IP list → Frequency-ranked IP addresses.
 
-Identify the number of requests generated by each IP address.
+Insight:
+Identified which IP addresses generated the most requests.
 
 ---
 
 ## 7. Pattern Detection
+Used the `grep` command with pattern matching.
 
-Used **grep** with regular expressions to identify bot traffic.
-
-**Example**
-
-Detected crawlers such as **Googlebot** and **Applebot**.
+Purpose:
+Identify bot-related traffic such as Googlebot or Applebot.
 
 ---
 
 ## 8. Log Format Conversion
+Used `sed` to replace brackets with quotation marks.
 
-Used **sed** to replace brackets with quotation marks.
-
-**Transformation**
-
-Web log format → CSV-like structured format suitable for analysis.
+Transformation:
+Original log format → CSV-like structure.
 
 ---
 
-# Data Preparation Using a Text Editor
+# Data Preparation using a Text Editor
 
 ## 1. JSON Formatting
+Reformatted compressed JSON into an organized hierarchical structure.
 
-Formatted a compressed JSON dataset into a readable hierarchical structure.
+Transformation:
+Compact JSON → Readable structured JSON.
 
-**Transformation**
-
-Compact JSON → Structured JSON.
+Purpose:
+Simplified navigation and data extraction.
 
 ---
 
 ## 2. Field Extraction
+Used multi-cursor selection to extract fields such as **City** and **Product**.
 
-Extracted attributes such as **City** and **Product** using multi-selection editing.
-
-**Purpose**
-
-Focus analysis on specific variables.
+Transformation:
+Full dataset → Lists of individual attributes.
 
 ---
 
-## 3. Sorting Data
+## 3. Data Sorting
+Applied alphabetical sorting to extracted city names.
 
-Sorted extracted city values alphabetically.
-
-**Transformation**
-
+Transformation:
 Unordered list → Sorted dataset.
+
+Purpose:
+Easier identification of duplicates.
 
 ---
 
 ## 4. Duplicate Removal
+Removed repeated lines using the editor’s duplicate removal command.
 
-Used editor commands to remove repeated lines.
-
-**Result**
-
-Generated a list of **unique city names**.
+Transformation:
+Repeated entries → Unique value list.
 
 ---
 
 ## 5. Data Standardization
+Corrected inconsistent spellings using multi-cursor editing.
 
-Corrected spelling variations using multi-cursor editing.
+Example:
+Different spellings of Bangalore standardized as **Bangalore**.
 
-**Example**
-
-Different spellings of **Bangalore** were standardized.
-
-**Purpose**
-
-Ensure consistency in categorical values.
+Purpose:
+Maintain consistency in categorical data.
 
 ---
 
 # Data Cleaning with OpenRefine
 
 ## 1. Dataset Import
+Loaded the raw dataset into an OpenRefine project environment.
 
-Loaded the raw dataset into **OpenRefine**.
-
-**Transformation**
-
-External dataset → OpenRefine project environment.
+Transformation:
+External dataset → Editable OpenRefine project.
 
 ---
 
 ## 2. Frequency Analysis
+Applied **Text Facet** to display value frequencies within columns.
 
-Used **Text Facets** to view frequency distribution of column values.
-
-**Purpose**
-
+Purpose:
 Identify repeated or inconsistent entries.
 
 ---
 
 ## 3. Similarity Detection
+Used clustering algorithms to detect similar textual entries.
 
-Applied **Clustering algorithms** to detect similar records.
-
-**Example**
-
-- "XYZ Limited"
-- "XYZ Ltd"
+Example:
+"XYZ Limited" and "XYZ Ltd" grouped together.
 
 ---
 
 ## 4. Entity Resolution
+Merged clustered entries into a single standardized value.
 
-Merged clustered records into standardized entries.
-
-**Transformation**
-
-Multiple variations → Single consistent entity.
+Transformation:
+Multiple variations → One consistent entity record.
 
 ---
 
-# Data Profiling with Pandas Profiling
+# Data Profiling using Pandas Profiling
 
 ## 1. Dataset Import
+Loaded the dataset into a pandas DataFrame.
 
-Loaded the dataset into a **pandas DataFrame**.
-
-**Transformation**
-
+Transformation:
 Raw dataset → Structured DataFrame.
 
 ---
 
 ## 2. Automated Profiling
+Generated a profiling report using the Pandas Profiling library.
 
-Generated a profiling report using **Pandas Profiling**.
-
-**Output**
-
-A comprehensive report summarizing dataset characteristics.
+Transformation:
+Dataset → Detailed analytical report.
 
 ---
 
 ## 3. Distribution Analysis
+Visualized distributions for both categorical and numeric variables.
 
-The report visualized distributions for categorical and numerical variables.
-
-**Examples**
-
-- Country frequency distribution
-- City population distribution
+Examples:
+- Country frequency
+- Population distribution of cities
 
 ---
 
 ## 4. Outlier Detection
+Detected extreme values in numeric variables.
 
-Highlighted extreme values in numerical variables.
-
-**Examples**
-
-- **Chongqing** identified as a population outlier
-- **Manila** identified as an outlier for population density
+Examples:
+- Chongqing with extremely high population.
+- Manila with unusually high population density.
 
 ---
 
 ## 5. Missing Value Analysis
-
-Detected columns with missing data.
+Identified columns with significant missing values.
 
 Example:
-
-- **Metropolitan population** column contained roughly **50% missing values**.
+Metropolitan population column contained around 50% missing data.
 
 ---
 
 ## 6. Correlation Analysis
+Generated a correlation matrix to examine relationships between variables.
 
-Generated correlation matrices between variables.
+Purpose:
+Identify strongly related variables.
 
-**Purpose**
+---
 
-Identify strong positive or negative relationships between features.
+# JSON API Data Analysis with Python
+
+## 1. API Data Retrieval
+Fetched JSON data from the Homebrew API.
+
+Transformation:
+Remote API response → Python data structures.
+
+---
+
+## 2. JSON Formatting
+Formatted JSON output for readability.
+
+Purpose:
+Understand the structure of returned data.
+
+---
+
+## 3. Dynamic URL Generation
+Created individual API URLs based on package names.
+
+Transformation:
+Package list → Individual analytics endpoints.
+
+---
+
+## 4. Data Extraction
+Parsed nested JSON fields to retrieve installation statistics.
+
+Example:
+Install counts for 30, 90, and 365 days.
+
+---
+
+## 5. Data Aggregation
+Combined extracted fields into structured dictionaries.
+
+Transformation:
+Multiple API responses → Unified dataset.
+
+---
+
+## 6. Data Storage
+Saved processed results into a JSON file.
+
+Purpose:
+Avoid repeated API calls and enable faster analysis.
+
+---
+
+## 7. Data Sorting
+Sorted packages based on installation counts.
+
+Transformation:
+Unordered package list → Popularity ranking.
+
+---
+
+# Image Processing with Pillow
+
+## 1. Image Loading
+Opened images in Python using the Pillow library.
+
+Transformation:
+Image files → Python image objects.
+
+---
+
+## 2. Format Conversion
+Converted images between formats.
+
+Example:
+JPEG → PNG.
+
+---
+
+## 3. Batch Processing
+Used loops to apply operations on multiple images in a directory.
+
+Transformation:
+Single-image workflow → Automated batch processing.
+
+---
+
+## 4. Image Resizing
+Generated thumbnails with specified dimensions.
+
+Example:
+300px and 700px versions for web display.
+
+---
+
+## 5. Image Rotation
+Rotated images by specified angles.
+
+Example:
+90-degree rotation.
+
+---
+
+## 6. Color Conversion
+Converted colored images to grayscale.
+
+Purpose:
+Produce black-and-white versions for analysis or design.
+
+---
+
+## 7. Image Filtering
+Applied Gaussian blur and other filters.
+
+Purpose:
+Alter the visual appearance of images.
+
+---
+
+# Media Processing with FFMPEG
+
+## 1. Format Conversion
+Converted multimedia files between formats.
+
+Example:
+AVI → MP4.
+
+Purpose:
+Ensure compatibility across different platforms.
+
+---
+
+## 2. Quality Adjustment
+Adjusted video quality using parameters such as quantizer or CRF.
+
+Purpose:
+Balance file size and visual quality.
+
+---
+
+## 3. Bitrate Configuration
+Specified audio and video bitrate values.
+
+Example:
+Video bitrate set to **1000k**.
+
+Purpose:
+Control compression level and playback quality.
+
+---
+
+## 4. Audio Processing
+Applied audio filters including:
+1. Volume adjustments
+2. Channel mapping
+
+Purpose:
+Improve or modify sound output.
+
+---
+
+## 5. Video Editing
+Applied video filters such as:
+1. Cropping
+2. Scaling
+3. Rotation
+
+Purpose:
+Modify video dimensions and orientation.
