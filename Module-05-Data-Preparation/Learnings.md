@@ -124,3 +124,33 @@
 8. Automated reports reduce the need for manual exploratory work.
 9. The tool helps detect potential data quality issues early.
 10. Pandas Profiling is frequently used before building machine learning models.
+
+------
+
+# Image Manipulation with Pillow
+
+1. Pillow is a Python library designed for performing image processing tasks.
+2. Images can be opened in Python as objects and then modified using different functions.
+3. The library provides features such as resizing, rotating, and applying filters to images.
+4. It also supports converting image formats, for example converting a JPEG image into PNG.
+5. Multiple images can be processed automatically through batch operations.
+6. Thumbnail images can be created while maintaining the original aspect ratio.
+7. Python scripts using Pillow help automate repetitive image editing operations.
+8. Visual effects like blur filters can be applied to change the appearance of an image.
+9. Color images can be converted into grayscale for analysis or preprocessing.
+10. Pillow is commonly used in web applications and data pipelines where image preprocessing is required.
+
+---
+
+# Media Processing with FFMPEG
+
+1. FFMPEG is a widely used command-line utility for handling multimedia files.
+2. It can convert between many formats of video, audio, and images.
+3. The general command structure follows the pattern: `ffmpeg -i input_file output_file`.
+4. Output video quality can be adjusted using parameters such as quantizer or CRF values.
+5. Bitrate settings allow control over the compression and final file size.
+6. FFMPEG includes a large collection of audio and video filters.
+7. These filters enable transformations such as cropping, scaling, rotating, and adjusting audio volume.
+8. Command-line execution makes it possible to process large numbers of media files efficiently.
+9. The tool is commonly used in media production environments, streaming platforms, and data processing workflows.
+10. Understanding different command flags allows more advanced media editing and automation tasks.
