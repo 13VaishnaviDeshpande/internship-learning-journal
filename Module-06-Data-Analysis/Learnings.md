@@ -33,3 +33,27 @@
 12. Observed that **new vaccinations show a slight negative relationship with deaths**.  
 13. Learned that some variables, such as the **stringency index**, may appear related but may not be statistically significant.  
 14. Understood that regression results provide insights but **further analysis is required to confirm conclusions**.
+
+-----
+
+# Key Learnings
+
+1. Learned correlation analysis to measure the strength and direction of relationships between variables.
+
+2. Gained knowledge of regression modeling for prediction, trend analysis, and understanding variable influence.
+
+3. Applied forecasting techniques using Excel functions such as FORECAST, TREND, and FORECAST.ETS for both linear and seasonal data.
+
+4. Understood methods for detecting outliers using statistical techniques like quartiles and Interquartile Range (IQR).
+
+5. Developed practical skills in Python using Pandas for data cleaning, manipulation, aggregation, and analysis.
+
+6. Learned SQL for querying and analyzing structured data from relational databases, including joins and aggregations.
+
+7. Gained understanding of efficient data storage formats such as Parquet and high-performance analytics using DuckDB.
+
+8. Acquired knowledge of geospatial analysis, including distance calculation and visualization of location-based data.
+
+9. Learned fundamentals of network analysis by modeling relationships as graphs using nodes and edges.
+
+10. Understood the importance of data visualization and the complete data analysis workflow from preprocessing to insight generation.
