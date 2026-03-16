@@ -1,539 +1,122 @@
-# Exploratory Data Analysis (EDA): Correlation Analysis with Excel
+# Correlation using Excel
 
-## Overview
-This tutorial demonstrates how to perform **correlation analysis** and basic **visual exploration** using Microsoft Excel on a COVID-19 dataset. Correlation analysis measures the **statistical relationship between two variables** and determines how strongly they are linearly related.
+In this module, correlation analysis was carried out on a COVID-19 dataset using Microsoft Excel. The study concentrated on three key variables: new cases, new deaths, and new vaccinations. Prior to the analysis, the Excel Data Analysis ToolPak was activated through the Add-ins menu.
 
-The dataset contains the following variables used in the analysis:
-- `new_cases`
-- `new_deaths`
-- `new_vaccinations`
+With the Data Analysis option, a correlation matrix was produced to evaluate the relationships among the selected variables. Correlation coefficients range from −1 to +1, representing both the strength and direction of linear relationships.
+
+The results indicated a strong positive correlation between new cases and new deaths, suggesting that increases in infections are associated with increases in fatalities. In contrast, the relationship between new vaccinations and new deaths showed a weak positive correlation. To complement the numerical findings, scatter plots with trendlines were created to visually examine these relationships and reveal underlying patterns.
 
 ---
 
-## What is Correlation?
+# Regression using Excel
 
-Correlation measures the **degree of linear association between two variables**.
+This tutorial demonstrated regression analysis in Microsoft Excel using a cleaned COVID-19 dataset. The Data Analysis ToolPak was used to perform a multiple linear regression. In this model, new deaths served as the dependent variable, while new cases, new tests, new vaccinations (per 1000), and the stringency index were treated as independent variables.
 
-Correlation coefficient values range between:
+Before executing the regression, selected variables were scaled by dividing them by 1000 to simplify interpretation of coefficients. The regression procedure involved assigning the dependent variable to the Y range and the independent variables to the X range within the Data Analysis → Regression tool.
 
-| Value | Meaning |
-|------|--------|
-| +1 | Perfect positive correlation |
-| 0 | No correlation |
-| -1 | Perfect negative correlation |
-
-Example:
-- `0.84` → Strong positive correlation  
-- `0.23` → Weak positive correlation  
+The resulting output included key statistical measures such as Adjusted R Square, F-test significance, regression coefficients, and P-values. These indicators were used to assess model performance, determine statistical significance, and interpret how each predictor influences the number of deaths.
 
 ---
 
-## Dataset
+# Forecasting with Excel
 
-The COVID-19 dataset contains daily records including:
+This tutorial explored forecasting methods in Excel using linear regression–based functions and time-series techniques. A sample dataset containing individuals’ heights and weights was used to demonstrate prediction capabilities with Excel’s FORECAST or FORECAST.LINEAR functions.
 
-| Column | Description |
-|------|-------------|
-| new_cases | Number of new COVID-19 cases reported |
-| new_deaths | Number of new COVID-19 deaths reported |
-| new_vaccinations | Number of vaccinations administered |
+Initially, the data was converted from imperial units to metric units by transforming height from inches to centimeters and weight from pounds to kilograms. A scatter plot was then generated to visualize the relationship between height and weight. Using forecasting functions, Excel predicted unknown values, such as estimating weight for a given height or height for a given weight.
 
-For this analysis, only these three columns are used.
+The session also introduced the TREND function, which applies regression across a range and produces multiple predicted values simultaneously. Additionally, a traffic dataset was used to demonstrate time-series forecasting with the FORECAST.ETS function, which accounts for seasonality and recurring patterns.
 
 ---
 
-## Step 1: Enable Excel Data Analysis ToolPak
+# Outlier Detection with Excel
 
-1. Open **Excel**
-2. Click **File**
-3. Select **Options**
-4. Go to **Add-ins**
-5. In **Manage**, select **Excel Add-ins**
-6. Click **Go**
-7. Check **Analysis ToolPak**
-8. Click **OK**
+This tutorial explained how to identify outliers in a dataset using Microsoft Excel. An outlier is an observation that deviates significantly from the rest of the data and may result from measurement error, variability, or unusual events. Detecting outliers is crucial because they can distort statistical results.
 
-After enabling, the **Data Analysis** option appears in the **Data tab**.
+Using a COVID-19 dataset, the new cases column was analyzed for extreme values. The process involved calculating the first quartile (Q1), third quartile (Q3), and the interquartile range (IQR). Lower and upper thresholds were then determined using:
+
+Lower Bound = Q1 − 1.5 × IQR  
+Upper Bound = Q3 + 1.5 × IQR  
+
+Excel functions such as QUARTILE.EXC were used to compute quartiles, and logical formulas identified values outside the acceptable range. A box-and-whisker plot was created to visually display the distribution and highlight outliers.
 
 ---
 
-## Step 2: Prepare the Dataset
+# Data Analysis with Python
 
-Keep only the required columns:
+This tutorial introduced programmatic data analysis using Python, primarily through the Pandas library. A credit card transaction dataset stored in Parquet format was examined. The dataset included fields such as transaction ID, date, approval decision, amount, jurisdiction, dispute category, and regional details.
 
-new_cases  
-new_deaths  
-new_vaccinations  
+The data was loaded using pandas.read_parquet(). Initial exploration involved reviewing column names, understanding dataset structure, and identifying variables of interest using commands like df.columns.
 
-Remove other columns to simplify the analysis.
+Subsequent analyses included grouping, pivot tables, correlations, and time-based aggregations. Pivot tables examined dispute patterns across regions, while correlation analysis explored relationships between transaction amounts and approval outcomes. Time-based analysis combined date and time fields to study approval trends across hours and days. Visual tools such as heatmaps were used to uncover temporal patterns in approval rates.
 
 ---
 
-## Step 3: Generate Correlation Matrix
+# Data Analysis with SQL
 
-Steps:
+This tutorial demonstrated how SQL can be used for data analysis directly within databases, often in combination with Python and Pandas. Since most large datasets are stored in relational databases, SQL is essential for efficient querying.
 
-1. Go to **Data**
-2. Click **Data Analysis**
-3. Select **Correlation**
-4. Click **OK**
-5. Select the input range containing:
+A database from the Relational Dataset Repository, specifically Stats.StackExchange, was used. It contained interconnected tables such as posts, users, votes, and post history, linked through identifiers like user IDs. This structure illustrates normalization, where data is stored efficiently without redundancy.
 
-new_cases  
-new_deaths  
-new_vaccinations  
+Using Python, data was accessed through pd.read_sql() with SQLAlchemy as the connection engine. Queries were written to compute metrics such as total posts, most active users, and user attributes like reputation, views, and age.
 
-6. Check **Labels in First Row**
-7. Select an **Output Range**
-8. Click **OK**
+Further analysis combined SQL retrieval with Pandas operations, including correlation studies between age and reputation and regression analysis examining how reputation changes with views. Aggregations were often performed directly in SQL to minimize data transfer and improve performance.
 
 ---
 
-## Correlation Matrix Example
+# Data Analysis with DuckDB
 
-| Variable | new_cases | new_deaths | new_vaccinations |
-|---------|-----------|------------|------------------|
-| new_cases | 1 | 0.84 | 0.31 |
-| new_deaths | 0.84 | 1 | 0.23 |
-| new_vaccinations | 0.31 | 0.23 | 1 |
+This tutorial introduced modern analytical tools including the Parquet file format and DuckDB. Parquet is a columnar storage format optimized for analytics, offering strong compression, typed storage, and faster performance compared to CSV or JSON.
 
----
+A large flight dataset was saved in multiple formats to compare size and loading speed. Results showed that Parquet files were significantly smaller and faster to process.
 
-## Interpretation
-
-### New Cases vs New Deaths
-- Correlation = **0.84**
-- Indicates **strong positive correlation**
-- When cases increase, deaths tend to increase.
-
-### New Vaccinations vs New Deaths
-- Correlation = **0.23**
-- Indicates **weak positive correlation**
-- Relationship exists but is not strong.
+The dataset was analyzed using both Pandas and DuckDB. DuckDB is an in-process analytical database that supports SQL queries directly on files without requiring data import into a traditional database. A computational task involving grouping flights by delay and counting unique routes was performed using both tools. DuckDB completed the operation much faster due to columnar execution, parallelism, and efficient disk handling. The tutorial also showed seamless integration between DuckDB and Pandas DataFrames.
 
 ---
 
-## Step 4: Visualize Using Scatter Plot
+# Geospatial Analysis with Excel
 
-Scatter plots help visualize relationships between variables.
+This tutorial demonstrated geospatial analysis using Excel alongside tools such as Python, GeoPandas, and GIS software. The case study examined coffee shop coverage in Manhattan to analyze geographic competition between Starbucks and McDonald’s.
 
-### Plot 1: New Cases vs New Deaths
+Location data for stores, population statistics, and geographic boundary data were combined. GeoPandas was used to merge demographic information with map boundaries. Coverage areas were calculated to determine which store was closest to residents in different locations.
 
-Steps:
-
-1. Select `new_cases` and `new_deaths`
-2. Go to **Insert**
-3. Select **Recommended Charts**
-4. Choose **Scatter Plot**
-
-Add a **Trendline**:
-
-- Click **Chart Elements (+)**
-- Select **Trendline**
-- Format line:
-  - Color: Red
-  - Style: Solid dash
-  - Increase thickness
-
-Interpretation:
-
-The upward slope shows **strong positive correlation**.
+The processed data was visualized using Excel 3D Maps and GIS tools to display population distribution and store proximity. These visualizations helped estimate potential customer bases for each coffee chain.
 
 ---
 
-### Plot 2: New Vaccinations vs New Deaths
+# Geospatial Analysis with Python
 
-Steps:
+This tutorial focused on geospatial analysis in Python for business decision-making, such as selecting locations for new stores. A dataset containing latitude and longitude coordinates of Starbucks and McDonald’s outlets in New York was used.
 
-1. Select `new_vaccinations` and `new_deaths`
-2. Insert **Scatter Plot**
-3. Add **Trendline**
+Coordinates were processed into geographic points, and the Empire State Building served as a reference location. Distances from each store to this landmark were calculated using the geopy library and added as a new dataset column.
 
-Interpretation:
-
-- Trendline slope is **less steep**
-- Indicates **weaker correlation**
-
-Observation:
-- Early period: Low vaccinations, high deaths  
-- Later period: Increased vaccinations correspond with reduced deaths  
+Interactive maps were created with the Folium library, using different marker colors for each brand. Additional analysis identified stores within specified distances and determined the nearest and farthest locations relative to the reference point.
 
 ---
 
-## Key Insights
+# Geospatial Analysis with QGIS
 
-- **New Cases ↔ New Deaths**
-  - Strong positive relationship
-  - Increased cases are associated with increased deaths
+This tutorial demonstrated the use of QGIS, a free open-source Geographic Information System, for creating and managing spatial data. The focus was on working with shapefiles and exporting them into formats such as KML.
 
-- **New Vaccinations ↔ New Deaths**
-  - Weak correlation
-  - Vaccinations may contribute to lowering deaths but require deeper analysis
+Existing shapefiles were obtained from repositories like DIVA-GIS and loaded into QGIS. Attribute tables were examined to understand geographic properties such as region names and administrative classifications.
+
+When shapefiles were unavailable, new ones were created manually using digitizing tools. A polygon representing South Sudan was drawn, and attributes like ID and region name were assigned. The shapefile was then exported in SHP and KML formats for use in other mapping tools such as Google Earth.
 
 ---
 
-## Limitations
+# Network Analysis in Python
 
-Correlation **does not imply causation**.
+This tutorial introduced network analysis using an IMDB dataset of actors and movies. Each actor was represented as a node, and connections (edges) were formed between actors who appeared in the same film.
 
-From this analysis alone, we **cannot conclude** that vaccinations directly reduced deaths. Further analysis such as:
+A movie-actor matrix was constructed to indicate actor participation in each movie. Matrix multiplication with its transpose efficiently calculated how often pairs of actors collaborated.
 
-- Regression analysis  
-- Time-series analysis  
-- Causal modeling  
-
-is required.
+Using the scikit-network library, this data was converted into a graph structure. Community detection algorithms, including the Louvain method, were applied to identify clusters of actors who frequently worked together, revealing collaboration patterns within the film industry.
 
 ---
 
-## Tools Used
+# Visualizing Machine Learning
 
-- Microsoft Excel  
-- Excel Data Analysis ToolPak  
-- Scatter Plot Visualization  
+This session emphasized the importance of visualizing machine learning models to make complex systems interpretable. Many advanced models, such as neural networks, support vector machines, and random forests, function as “black boxes,” making their decision processes difficult to understand.
 
----
+Through examples like customer churn prediction and district clustering using census data, the tutorial demonstrated how visualization techniques can clarify model outputs. Methods such as K-means clustering grouped similar regions based on demographic characteristics and displayed them geographically to reveal meaningful patterns.
 
-# Exploratory Data Analysis (EDA) for Regression using Excel
-
-## Overview
-Before performing regression analysis, it is important to conduct **Exploratory Data Analysis (EDA)** to understand the structure, patterns, and relationships in the dataset. In this tutorial, the **COVID-19 dataset** is explored to identify how different variables may influence the number of deaths.
-
-The dataset used in the analysis has already been **cleaned** and contains only the relevant variables required for modeling.
-
----
-
-## Dataset Variables
-
-The following variables are used for the regression analysis:
-
-| Variable | Type | Description |
-|--------|------|-------------|
-| new_deaths | Dependent Variable | Number of new COVID-19 deaths reported |
-| new_cases_per_1000 | Independent Variable | Number of new cases per 1000 people |
-| new_tests_per_1000 | Independent Variable | Number of new tests conducted per 1000 people |
-| new_vaccinations_per_1000 | Independent Variable | Number of vaccinations administered per 1000 people |
-| stringency_index | Independent Variable | Government policy strictness index |
-
-The variables **new_cases**, **new_tests**, and **new_vaccinations** were divided by **1000** to simplify interpretation during regression analysis.
-
----
-
-## Data Transformation
-
-To make the regression coefficients easier to interpret, the following transformations were applied:
-
-- `new_cases_per_1000 = new_cases / 1000`
-- `new_tests_per_1000 = new_tests / 1000`
-- `new_vaccinations_per_1000 = new_vaccinations / 1000`
-
-This scaling ensures that regression coefficients represent the effect **per 1000 units** rather than per single unit.
-
----
-
-## Purpose of EDA
-
-The purpose of performing EDA before regression includes:
-
-- Understanding the dataset structure
-- Identifying important variables
-- Observing possible relationships between variables
-- Detecting unusual patterns or anomalies
-- Preparing variables for regression modeling
-
----
-
-## Observations from the Data
-
-### 1. Relationship Between Cases and Deaths
-A higher number of **new COVID-19 cases** tends to correspond with an increase in **new deaths**, indicating a likely positive relationship between these variables.
-
-### 2. Relationship Between Testing and Deaths
-The number of **tests conducted** may influence the detection of cases and indirectly impact the number of reported deaths.
-
-### 3. Relationship Between Vaccinations and Deaths
-Vaccination data is analyzed to observe whether an increase in vaccinations may correspond with a decrease in deaths.
-
-### 4. Government Stringency Measures
-The **stringency index** reflects the strictness of government policies such as lockdowns, travel restrictions, and social distancing rules. It is included to evaluate whether stricter policies impact the number of deaths.
-
----
-
-## Preparing for Regression
-
-After exploring the dataset, the following decisions were made for regression modeling:
-
-- **Dependent Variable (Y):** new_deaths
-- **Independent Variables (X):**
-  - new_cases_per_1000
-  - new_tests_per_1000
-  - new_vaccinations_per_1000
-  - stringency_index
-
-Since multiple predictors are used, the analysis will use **Multiple Linear Regression**.
-
----
-
-## Key Takeaways from EDA
-
-- The dataset was cleaned and reduced to relevant variables.
-- Important predictors related to COVID-19 outcomes were identified.
-- Variables were scaled to improve interpretability.
-- Relationships between variables were explored conceptually before modeling.
-
----
-
-# Exploratory Data Analysis (EDA)
-
-Exploratory Data Analysis (EDA) is the process of examining datasets to understand their structure, characteristics, patterns, and potential issues before applying statistical models or machine learning techniques.
-
-EDA helps in identifying trends, relationships, anomalies, missing values, and data quality problems.
-
-## Objectives of EDA
-
-- Understand the overall structure of the dataset
-- Identify important variables and their distributions
-- Detect missing values and inconsistencies
-- Discover relationships between variables
-- Identify outliers and anomalies
-- Generate insights for feature selection and modeling
-
-## Data Inspection
-
-Initial exploration includes examining dataset size, column names, and data types.
-
-Typical steps:
-
-- View first and last few records
-- Check number of rows and columns
-- Inspect data types (numeric, categorical, date/time)
-- Verify data consistency
-
-## Data Cleaning
-
-Data cleaning ensures accuracy and reliability of analysis.
-
-Key tasks:
-
-- Handling missing values (removal or imputation)
-- Removing duplicate records
-- Correcting inconsistent entries
-- Converting data types where necessary
-- Standardizing formats
-
-## Univariate Analysis
-
-Univariate analysis examines each variable independently.
-
-For numerical variables:
-
-- Mean, median, mode
-- Standard deviation and variance
-- Minimum and maximum values
-- Distribution shape (normal, skewed)
-
-For categorical variables:
-
-- Frequency counts
-- Category proportions
-
-Visualization methods:
-
-- Histograms
-- Bar charts
-- Box plots
-
-## Bivariate Analysis
-
-Bivariate analysis studies relationships between two variables.
-
-Techniques include:
-
-- Scatter plots for numeric variables
-- Correlation analysis
-- Cross-tabulation for categorical variables
-- Comparison of group statistics
-
-Correlation coefficients indicate strength and direction of relationships.
-
-## Multivariate Analysis
-
-Multivariate analysis explores interactions among multiple variables simultaneously.
-
-Common methods:
-
-- Correlation matrices
-- Pair plots
-- Dimensionality reduction techniques
-- Clustering analysis
-
-This helps uncover complex patterns not visible in simpler analyses.
-
-## Outlier Detection
-
-Outliers are extreme values that differ significantly from other observations.
-
-Detection methods:
-
-- Interquartile Range (IQR) method
-- Z-score method
-- Box plots
-- Visual inspection
-
-Handling outliers improves model performance and prevents misleading conclusions.
-
-## Data Visualization
-
-Visualization is a key component of EDA because it reveals patterns that may not be apparent from numerical summaries.
-
-Common visualization techniques:
-
-- Line charts for trends over time
-- Scatter plots for relationships
-- Heatmaps for correlation analysis
-- Box plots for distribution comparison
-- Pie charts for categorical proportions
-
-## Insights and Feature Selection
-
-EDA helps identify:
-
-- Important predictors
-- Redundant variables
-- Potential transformations
-- Data preparation requirements
-
-These insights guide the selection of features for modeling and improve predictive accuracy.
-----
-# Exploratory Data Analysis (EDA) — Forecasting Dataset
-
-## Dataset Overview
-
-Two datasets were analyzed:
-
-1. Heights and Weights Dataset
-   - Contains physical measurements of individuals
-   - Variables: Height (inches), Weight (pounds)
-   - Sample size used: ~1,000 records
-   - Converted to metric units: centimeters and kilograms
-
-2. Traffic Time-Series Dataset
-   - Contains hourly vehicle counts at road junctions
-   - Variables: Date/Time, Number of Vehicles
-   - Used to study temporal patterns and seasonality
-
----
-
-## Data Preparation
-
-- Height converted from inches to centimeters using:
-  Height (cm) = Inches × 2.54
-- Weight converted from pounds to kilograms using:
-  Weight (kg) = Pounds ÷ 2.204
-- Decimal precision reduced for readability
-- Data formatted for visualization and analysis
-
----
-
-## Univariate Analysis
-
-### Heights and Weights Dataset
-
-- Heights ranged approximately from 160 cm to 185 cm
-- Weights ranged approximately from 50 kg to 65 kg
-- Values showed moderate spread with no extreme anomalies
-- Distributions appeared roughly continuous
-
-### Traffic Dataset
-
-- Vehicle counts varied significantly across time
-- Data showed high variability with sharp peaks and troughs
-- Indicates non-uniform distribution
-
----
-
-## Bivariate Analysis
-
-### Height vs Weight Relationship
-
-- Scatter plot revealed a strong positive relationship
-- As height increases, weight also increases
-- Relationship appears approximately linear
-- Suitable for linear regression modeling
-
----
-
-## Correlation Insights
-
-- Positive correlation between height and weight
-- Suggests weight can be predicted from height
-- Supports use of linear forecasting methods
-
----
-
-## Trend Analysis
-
-### Heights and Weights
-
-- No time component; trend reflects physical relationship
-- Linear increase observed between variables
-
-### Traffic Dataset
-
-- Clear temporal patterns observed
-- Daily cycles (peak and low traffic hours)
-- Weekly patterns (weekday vs weekend differences)
-- Holiday effects causing unusually low traffic
-
----
-
-## Seasonality Detection
-
-Traffic data exhibited strong seasonal behavior:
-
-- Repeating patterns every 24 hours (daily cycle)
-- Weekly periodic patterns
-- Event-driven fluctuations (holidays)
-
-Linear models fail to capture these repeating patterns.
-
----
-
-## Outlier Analysis
-
-### Heights and Weights
-
-- No major outliers observed in the sample
-- Data appears relatively consistent
-
-### Traffic Dataset
-
-- Occasional unusually high or low vehicle counts
-- May correspond to accidents, events, or holidays
-
----
-
-## Model Suitability Insights
-
-- Linear regression suitable for height–weight prediction
-- Linear forecasting ineffective for cyclical traffic data
-- Time-series methods required for seasonal datasets
-
----
-
-## Visualization Insights
-
-- Scatter plot effectively revealed linear relationships
-- Line charts exposed temporal fluctuations in traffic data
-- Comparison plots showed differences between actual and predicted values
-
----
-
-## Key Findings
-
-- Physical measurement data shows stable linear relationships
-- Time-series data exhibits strong seasonality and variability
-- Choice of forecasting method must match data characteristics
-
----
-
+The concept of moving along the “ladder of abstraction” was highlighted—transforming raw data into summarized visual insights and enabling interactive exploration to better understand model behavior and relationships.
