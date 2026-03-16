@@ -1,59 +1,177 @@
-## Learnings from Module 6: Correlation Analysis and Outlier Detection using Excel
+## Learnings: Correlation using Excel
 
-1. Learned the basics of correlation analysis and its purpose in measuring relationships between variables.
-2. Understood that the correlation coefficient ranges from -1 to +1.
-3. Learned how to enable the Excel Data Analysis ToolPak.
-4. Learned how to generate a correlation matrix in Excel.
-5. Understood how to interpret strong and weak correlations.
-6. Analyzed key variables: new cases, new deaths, and new vaccinations.
-7. Observed a strong positive correlation between new cases and new deaths.
-8. Observed a weak positive correlation between new vaccinations and new deaths.
-9. Learned to create scatter plots for visualizing relationships.
-10. Learned to add and format trendlines in charts.
-11. Understood that steeper trendlines indicate stronger relationships.
-12. Learned that visualizations help interpret statistical results.
-13. Understood that correlation does not imply causation.
-14. Learned that further analysis (e.g., regression) is needed for deeper insights.
+1. Learned how to perform correlation analysis using Excel’s Data Analysis ToolPak.  
+2. Understood the meaning of correlation coefficient and its range from −1 to +1.  
+3. Learned to interpret positive, negative, and zero correlations.  
+4. Gained skills in generating a correlation matrix for multiple variables.  
+5. Learned how to analyze relationships between COVID-19 cases, deaths, and vaccinations.  
+6. Understood that strong correlation indicates close association between variables.  
+7. Learned that weak correlation suggests limited linear relationship.  
+8. Practiced creating scatter plots to visualize correlations.  
+9. Learned to add and format trendlines for better interpretation.  
+10. Understood that correlation does not imply causation.  
 
-------
+---
 
-## Learnings On Regression Analysis using Excel
+## Learnings: Regression using Excel
 
-1. Learned the concept of regression analysis and how it is used to model relationships between variables.  
-2. Understood the difference between **simple linear regression** and **multiple linear regression**.  
-3. Learned how to perform regression analysis in Excel using the **Data Analysis ToolPak**.  
-4. Understood how to define **dependent (Y) and independent (X) variables** in regression.  
-5. Learned how to prepare data by converting variables into **per 1000 values** for easier interpretation.  
-6. Understood how to select input ranges for regression in Excel.  
-7. Learned how to interpret **Adjusted R-Square** in multiple regression models.  
-8. Understood that **Adjusted R² indicates how much variation in the dependent variable is explained by the model**.  
-9. Learned how to evaluate model significance using the **Significance F value**.  
-10. Understood how to interpret **P-values** to determine whether independent variables are statistically significant.  
-11. Observed that **new cases and new tests have a positive impact on new deaths**.  
-12. Observed that **new vaccinations show a slight negative relationship with deaths**.  
-13. Learned that some variables, such as the **stringency index**, may appear related but may not be statistically significant.  
-14. Understood that regression results provide insights but **further analysis is required to confirm conclusions**.
+1. Learned how to perform multiple linear regression using Excel.  
+2. Understood the difference between simple and multiple regression.  
+3. Learned to define dependent and independent variables correctly.  
+4. Gained knowledge of selecting Y range and X range in Excel.  
+5. Learned the importance of scaling variables for interpretation.  
+6. Understood the meaning of Adjusted R² in multiple regression.  
+7. Learned how to evaluate model significance using Significance F.  
+8. Gained skills in interpreting regression coefficients.  
+9. Learned to use P-values to determine statistical significance.  
+10. Understood how regression can be used for explanation and prediction.  
 
------
+---
 
-# Key Learnings
+## Learnings: Forecasting with Excel
 
-1. Learned correlation analysis to measure the strength and direction of relationships between variables.
+1. Learned how to use Excel’s FORECAST and FORECAST.LINEAR functions.  
+2. Understood how regression can be used for prediction.  
+3. Learned to convert units to maintain consistency in analysis.  
+4. Gained skills in visualizing relationships using scatter plots.  
+5. Learned how to estimate unknown values from known data.  
+6. Understood the use of the TREND function for multiple predictions.  
+7. Learned basics of time-series forecasting.  
+8. Gained knowledge of FORECAST.ETS for seasonal data.  
+9. Understood factors affecting forecast accuracy.  
+10. Learned how forecasting supports planning decisions.  
 
-2. Gained knowledge of regression modeling for prediction, trend analysis, and understanding variable influence.
+---
 
-3. Applied forecasting techniques using Excel functions such as FORECAST, TREND, and FORECAST.ETS for both linear and seasonal data.
+## Learnings: Outlier Detection with Excel
 
-4. Understood methods for detecting outliers using statistical techniques like quartiles and Interquartile Range (IQR).
+1. Learned the concept of outliers and their impact on analysis.  
+2. Understood how to calculate quartiles (Q1 and Q3).  
+3. Learned to compute the interquartile range (IQR).  
+4. Gained skills in calculating lower and upper bounds.  
+5. Learned to identify extreme values using formulas.  
+6. Understood the role of outliers in data quality issues.  
+7. Learned how Excel functions automate outlier detection.  
+8. Practiced visualizing outliers using box plots.  
+9. Understood when to investigate or remove outliers.  
+10. Learned that handling outliers improves model reliability.  
 
-5. Developed practical skills in Python using Pandas for data cleaning, manipulation, aggregation, and analysis.
+---
 
-6. Learned SQL for querying and analyzing structured data from relational databases, including joins and aggregations.
+## Learnings: Data Analysis with Python
 
-7. Gained understanding of efficient data storage formats such as Parquet and high-performance analytics using DuckDB.
+1. Learned how to analyze datasets using Python and Pandas.  
+2. Understood how to load Parquet files into Python.  
+3. Gained skills in exploring dataset structure and columns.  
+4. Learned to perform grouping and aggregation operations.  
+5. Practiced creating pivot tables programmatically.  
+6. Understood correlation analysis using Pandas.  
+7. Learned time-based analysis using date fields.  
+8. Gained experience in data visualization techniques.  
+9. Understood advantages of programmatic analysis over spreadsheets.  
+10. Learned Python’s role in modern data science workflows.  
 
-8. Acquired knowledge of geospatial analysis, including distance calculation and visualization of location-based data.
+---
 
-9. Learned fundamentals of network analysis by modeling relationships as graphs using nodes and edges.
+## Learnings: Data Analysis with SQL
 
-10. Understood the importance of data visualization and the complete data analysis workflow from preprocessing to insight generation.
+1. Learned how SQL is used for analyzing relational databases.  
+2. Understood database normalization concepts.  
+3. Gained skills in writing aggregation queries.  
+4. Learned to filter and retrieve relevant data efficiently.  
+5. Practiced joining multiple related tables.  
+6. Understood how SQL reduces data transfer needs.  
+7. Learned to integrate SQL queries with Python.  
+8. Gained knowledge of analyzing large datasets in databases.  
+9. Understood performance benefits of database-side computation.  
+10. Learned SQL’s importance in real-world analytics.  
+
+---
+
+## Learnings: Data Analysis with DuckDB
+
+1. Learned about columnar storage formats like Parquet.  
+2. Understood advantages of Parquet over CSV and JSON.  
+3. Gained knowledge of DuckDB as an analytical database.  
+4. Learned to run SQL queries directly on data files.  
+5. Understood performance benefits of parallel processing.  
+6. Practiced comparing Pandas and DuckDB performance.  
+7. Learned integration between DuckDB and DataFrames.  
+8. Understood benefits of serverless analytics tools.  
+9. Gained insights into handling large datasets efficiently.  
+10. Learned modern approaches to big data analysis.  
+
+---
+
+## Learnings: Geospatial Analysis with Excel
+
+1. Learned basics of analyzing location-based data in Excel.  
+2. Understood how to combine geographic and population data.  
+3. Gained skills in creating 3D maps.  
+4. Learned how to visualize spatial distributions.  
+5. Understood proximity and coverage analysis concepts.  
+6. Practiced interpreting geographic patterns.  
+7. Learned how location affects business decisions.  
+8. Gained insights into market coverage visualization.  
+9. Understood importance of spatial context in data.  
+10. Learned Excel’s capabilities for basic geospatial analysis.  
+
+---
+
+## Learnings: Geospatial Analysis with Python
+
+1. Learned to work with latitude and longitude data.  
+2. Understood how to compute distances between locations.  
+3. Gained skills in using geospatial libraries.  
+4. Learned to create interactive maps using Python.  
+5. Practiced visual differentiation of locations.  
+6. Understood radius-based filtering techniques.  
+7. Learned methods to identify nearest and farthest points.  
+8. Gained insights into spatial decision support.  
+9. Understood integration of geographic data with analysis.  
+10. Learned Python’s strength in advanced geospatial tasks.  
+
+---
+
+## Learnings: Geospatial Analysis with QGIS
+
+1. Learned basics of QGIS as a GIS software.  
+2. Understood the structure and use of shapefiles.  
+3. Gained skills in viewing attribute tables.  
+4. Learned digitizing techniques to create regions.  
+5. Practiced editing spatial data.  
+6. Understood exporting maps to other formats.  
+7. Learned how GIS supports geographic research.  
+8. Gained insights into spatial data management.  
+9. Understood interoperability with mapping tools.  
+10. Learned importance of GIS in spatial analysis.  
+
+---
+
+## Learnings: Network Analysis in Python
+
+1. Learned how networks represent relationships.  
+2. Understood nodes and edges concepts.  
+3. Gained skills in constructing collaboration networks.  
+4. Learned matrix-based methods for connection analysis.  
+5. Practiced community detection techniques.  
+6. Understood clustering in networks.  
+7. Learned to interpret network structures.  
+8. Gained insights into influential nodes.  
+9. Understood applications in social and information networks.  
+10. Learned Python tools for network analytics.  
+
+---
+
+## Learnings: Visualizing Machine Learning
+
+1. Learned importance of visualization for model interpretation.  
+2. Understood challenges of black-box models.  
+3. Gained skills in visualizing predictions.  
+4. Learned clustering visualization techniques.  
+5. Understood geographic visualization of results.  
+6. Practiced communicating insights visually.  
+7. Learned role of visuals in decision support.  
+8. Understood validation of model behavior through plots.  
+9. Gained insights into interactive visualization benefits.  
+10. Learned how visualization builds trust in ML systems.  
