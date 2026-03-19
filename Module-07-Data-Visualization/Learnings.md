@@ -1,104 +1,104 @@
 # Visualising Forecasts with Excel
 
-- Excel is a powerful tool for exploratory data analysis and visualization.
-- Time series data can be effectively analyzed using line charts and Sparklines.
-- Pivot tables structure and organize raw data for efficient analysis.
-- Forecasting can be performed using functions like `GROWTH`.
-- Standard deviation and range are key measures of volatility.
-- Scatter plots and trendlines help visualize relationships between variables.
-- Correlation analysis measures the strength and direction of relationships.
-- Correlation matrices provide a comprehensive view of multiple relationships.
-- Conditional formatting improves data interpretation through visual cues.
-- Visualization helps quickly identify trends, outliers, and hidden patterns.
+- Excel is widely used for exploratory analysis as well as preliminary forecasting.
+- Time series data can be visualized using line charts and Sparklines to detect patterns such as trends and fluctuations.
+- Pivot tables convert unstructured data into organized formats, enabling efficient analysis.
+- Forecasting functions like `GROWTH` estimate future values based on historical patterns.
+- Volatility can be assessed using statistical measures such as standard deviation and relative range.
+- Scatter plots help examine relationships between variables, while trendlines indicate the direction of these relationships.
+- Correlation analysis quantifies the degree to which variables move together.
+- Correlation matrices provide a complete view of pairwise relationships in a dataset.
+- Conditional formatting highlights critical values, making patterns easier to interpret.
+- Overall, Excel visualizations support quick identification of trends, risks, and anomalies.
 
 ---
 
 # Visualising Animated Data with PowerPoint
 
-- Bar chart races are effective for storytelling with time-series data.
-- Proper data preparation and structuring are essential before visualization.
-- Excel is commonly used for cleaning and transforming datasets.
-- PowerPoint can function as a dynamic visualization tool.
-- Morph transition enables smooth and continuous animations.
-- Consistent object naming ensures accurate animation behavior.
-- Proper scaling maintains proportional representation of values.
-- Entry and exit transitions enhance visual clarity.
-- Animation timing and alignment improve overall presentation quality.
+- Bar chart races are effective for presenting changes in rankings over time.
+- Accurate visualization depends on properly cleaned and structured data.
+- Excel is typically used for preprocessing before importing into PowerPoint.
+- PowerPoint can be repurposed as a lightweight animation tool for data storytelling.
+- Morph transition enables smooth interpolation between chart states.
+- Consistent object naming ensures elements are tracked correctly across slides.
+- Proper scaling is essential to maintain proportional accuracy of visual elements.
+- Entry and exit animations guide user attention and improve interpretability.
+- Fine-tuning animation duration and alignment enhances clarity and presentation quality.
 
 ---
 
 # Visualising Animated Data with Flourish
 
-- Animation enhances data storytelling when used appropriately.
-- Object constancy helps users track elements across transitions.
-- Different templates use different animation controls (ms vs seconds).
-- Line and bar chart races effectively show changes over time.
-- Scatter plots require proper configuration (e.g., name field).
-- Staggered animations improve readability in complex visuals.
-- Chart morphing should only be used for related datasets.
-- Time controls and animation settings serve distinct purposes.
-- Excessive or incorrect animation can confuse or mislead users.
+- Animation plays a key role in improving engagement and comprehension.
+- Object constancy ensures continuity of data points across transitions.
+- Different chart templates provide varying levels of animation control.
+- Line and bar chart races are particularly effective for time-based comparisons.
+- Scatter plot animations require unique identifiers to track data points correctly.
+- Staggered transitions help reduce visual clutter in dense datasets.
+- Morphing between charts should only be applied when datasets are logically related.
+- Time controls manage sequence progression, while animation settings control motion behavior.
+- Improper use of animation can lead to misinterpretation of data.
 
 ---
 
 # Visualising Network Data with Kumu
 
-- Network visualization reveals complex relationships between entities.
-- Kumu is designed for interactive network exploration.
-- Data must be structured into nodes and relationships.
-- Matrix multiplication helps derive connections between entities.
-- Sparse matrices improve efficiency for large datasets.
-- Co-occurrence matrices show strength of relationships.
-- Network graphs identify hubs, clusters, and indirect links.
-- Filtering reduces complexity and improves clarity.
-- Interactive exploration enables deeper analysis of networks.
+- Network visualization is useful for analyzing complex relational structures.
+- Kumu provides an interactive environment for exploring such networks.
+- Data must be structured into nodes (entities) and edges (relationships).
+- Relationships can be derived using techniques like matrix multiplication.
+- Sparse matrix representations improve computational efficiency for large datasets.
+- Co-occurrence matrices quantify the strength of relationships between entities.
+- Network graphs reveal hubs, clusters, and indirect connections.
+- Filtering helps simplify dense networks and improve readability.
+- Interactive exploration allows deeper insight into relational patterns.
 
 ---
 
 # Data Visualization with Seaborn
 
-- Seaborn is a high-level library built on Matplotlib.
-- Simplifies statistical visualization with concise syntax.
-- Supports both univariate and multivariate analysis.
-- Pair plots and joint plots explore variable relationships.
-- Box and violin plots reveal distribution and outliers.
-- Heatmaps and cluster maps highlight correlations and patterns.
-- Grid systems (PairGrid, FacetGrid) allow advanced layouts.
-- Styling options enhance readability and presentation.
-- Regression plots help analyze predictive relationships.
+- Seaborn extends Matplotlib to simplify statistical data visualization.
+- It supports both basic and advanced visualizations with minimal code.
+- Enables analysis of distributions as well as relationships between variables.
+- Pair plots and joint plots are effective for multivariate exploration.
+- Box plots and violin plots highlight distribution characteristics and outliers.
+- Heatmaps and cluster maps uncover correlations and grouped patterns.
+- Grid-based layouts allow flexible arrangement of multiple visualizations.
+- Built-in styling options enhance clarity and presentation quality.
+- Regression plots help in understanding trends and predictive relationships.
 
 ---
 
 # Google Charts
 
-- Google Charts enables interactive, web-based visualizations.
-- Integrates with R using googleVis for analytical workflows.
-- Sankey diagrams visualize flows between stages.
-- Motion charts display multi-variable changes over time.
-- Interactive features (tooltips, filters) improve user experience.
-- Dashboards can combine multiple visualizations.
-- HTML customization enhances flexibility.
-- Requires internet connectivity, which is a limitation.
+- Google Charts provides interactive, browser-based visualizations.
+- It integrates well with web applications and analytical tools like R (via googleVis).
+- Sankey diagrams are effective for representing flows and transitions.
+- Motion charts visualize changes in multiple variables over time.
+- Interactive features such as tooltips and filters improve user engagement.
+- Multiple visual components can be combined into a single dashboard.
+- Customization through HTML enhances flexibility and presentation.
+- Dependence on internet connectivity is a notable limitation.
 
 ---
 
 # Google Data Studio
 
-- Enables quick creation of interactive dashboards.
-- Connects to multiple data sources (e.g., Google Sheets).
-- Understanding dimensions and metrics is essential.
-- Aggregation functions summarize data effectively.
-- Filters enable dynamic and interactive analysis.
-- Various charts provide multiple perspectives on data.
-- Scorecards highlight key performance indicators (KPIs).
-- Styling improves clarity and visual appeal.
+- Google Data Studio enables the creation of interactive and shareable dashboards.
+- It connects to multiple data sources, including Google Sheets and databases.
+- Clear distinction between dimensions (categorical) and metrics (numerical) is essential.
+- Aggregation functions help summarize and interpret large datasets.
+- Filters allow users to interact dynamically with reports.
+- Various chart types provide multiple analytical perspectives.
+- Scorecards highlight key metrics and track performance over time.
+- Layout and styling play a significant role in improving usability and clarity.
 
 ---
 
 # Overall Learning
 
-- Data preparation is critical before visualization.
-- Choosing the right visualization technique is essential.
-- Animation and interactivity enhance understanding when used correctly.
-- Different tools serve different analytical purposes.
-- Effective visualization supports better decision-making.
+- Effective visualization starts with clean and well-structured data.
+- Selecting appropriate visualization techniques is critical for accurate interpretation.
+- Animation and interactivity should enhance insight, not distract from it.
+- Different tools are suited for different types of analysis and presentation.
+- Strong visualizations support better understanding and informed decision-making.
