@@ -28,6 +28,8 @@ Course Link: https://tds.s-anand.net/#/
 | Module 03 | LLMs, Embeddings, Vector Databases, Multimodal APIs | Completed |
 | Module 04 | Data Sourcing | Completed |
 | Module 05 | Data preparation | Completed |
+| Module 06 | Data Analysis | Completed |
+| Module 07 | Data Visualisation | In Progress|
 
 
 
@@ -131,6 +133,23 @@ Course Link: https://tds.s-anand.net/#/
 - Performed **batch image operations** such as resizing, rotation, filtering, and format conversion.
 - Used **FFMPEG for multimedia processing**, including media format conversion and transformations.
 - Learned **command-line workflows for efficient multimedia processing**
+-----
+## Week 6 Highlights
+
+- Introduction to exploratory data analysis (EDA) using Excel  
+- Understanding correlation, regression, and forecasting techniques  
+- Detecting outliers using quartiles and Interquartile Range (IQR)  
+- Performing data analysis using Python (Pandas)  
+- Understanding database-based analytics using SQL queries  
+- Exploring DuckDB and Parquet for efficient data processing  
+- Performing geospatial analysis using Excel and Python  
+- Visualizing geographic data using Folium  
+- Creating and managing shapefiles using QGIS  
+- Understanding social network analysis (actor collaboration networks)  
+- Applying clustering techniques for community detection  
+- Learning the role of visualization in machine learning interpretability  
+- Using clustering and correlation analysis to understand data relationships
+-----
 
 ## 🔄 Weekly Update Log
 | Week | What I Learned |
@@ -141,6 +160,5 @@ Course Link: https://tds.s-anand.net/#/
 | Week 3 | Introduced LLM concepts and API interaction, including OpenAI Chat Completion structure, role-based messaging, and conversation handling. Explored embeddings, cosine similarity, vector databases, Retrieval-Augmented Generation (RAG), and multimodal inputs, along with structured outputs using function calling. |
 | Week 4 | Learned the fundamentals of web scraping including understanding HTML structures (tags, classes, IDs) and extracting website data using Python libraries like Requests and BeautifulSoup. Practiced parsing and cleaning HTML content, scraping structured data such as tables, handling pagination, and extracting data from PDFs. Also worked with OpenStreetMap’s Nominatim API for geolocation data and learned how to store and clean scraped data using Pandas while following ethical scraping practices and rate limits. |
 | Week 5 | Focused on data preparation and preprocessing techniques. Learned dataset cleaning using Excel (Find & Replace, Trim, removing blanks and duplicates) and Text-to-Columns for structuring raw data. Practiced quick dataset editing in VS Code, entity resolution using OpenRefine, and dataset analysis using Pandas Profiling. Also explored working with JSON APIs in Python, automated image manipulation with Pillow, and multimedia processing workflows using FFMPEG. |
-
-
+| Week 6 | Covered exploratory data analysis and advanced concepts. Learned correlation, regression, forecasting, and outlier detection. Explored SQL analytics, DuckDB, Parquet, geospatial analysis (Folium, QGIS), and network analysis techniques. |
 
