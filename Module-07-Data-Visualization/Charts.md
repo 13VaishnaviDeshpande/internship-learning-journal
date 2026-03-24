@@ -243,4 +243,91 @@
 - Kumu → network relationships  
 - Seaborn → statistical visualization  
 - Google Charts → web-based interactive charts  
-- Looker Studio → dashboards and reporting  
+- Looker Studio → dashboards and reporting
+  
+-------
+
+# Data Visualization & Storytelling Techniques
+
+## Actor Network Visualization
+- Represent actor relationships as graphs  
+- Nodes = actors, Edges = collaborations  
+- Helps visualize:
+  - Connections between entities  
+  - Paths and relationships  
+  - Degrees of separation  
+- Useful for network analysis in large datasets  
+
+---
+
+## RAWGraphs
+- Supports complex visualizations:
+  - Network graphs  
+  - Scatter plots  
+  - Multi-dimensional charts  
+- Built on D3.js  
+- Maps dataset dimensions → visual variables  
+- Export formats:
+  - Vector (SVG)  
+  - Raster (PNG)  
+- Ideal for quick and flexible data visualization  
+
+---
+
+## Data Storytelling
+- Charts communicate insights visually  
+- Enables faster understanding of patterns  
+- Reduces reliance on long textual explanations  
+- Focus on:
+  - Clarity  
+  - Trends  
+  - Key insights  
+
+---
+
+## Interactive Notebooks (Marimo)
+- Auto-updating visualizations based on input changes  
+- Supports:
+  - Sliders  
+  - UI controls  
+  - Interactive elements  
+- Enables dynamic plots  
+  - Example: sine wave reacting to parameter changes  
+- Combines:
+  - Code  
+  - Visualization  
+  - Real-time data exploration  
+
+---
+
+## Narratives with Excel
+- Uses charts for storytelling:
+  - Histograms  
+  - Line charts  
+- Trendlines (linear regression) reveal data direction  
+- Features:
+  - Dynamic updates via filters  
+  - Chart titles linked to cells  
+- Charts act as the visual backbone of narratives  
+
+---
+
+## Narratives with Comics
+- Uses comic-style visuals instead of traditional charts  
+- Key elements:
+  - Speech bubbles → insights  
+  - Characters → data representation  
+  - Expressions → reflect trends  
+    - High values → positive expressions  
+    - Low values → negative expressions  
+- Built using:
+  - Image URLs in Google Sheets  
+- Provides a creative alternative to standard visualizations  
+
+---
+
+## Summary
+- Graphs → relationships and networks  
+- Charts → trends and insights  
+- Interactive tools → dynamic exploration  
+- Comics → engaging storytelling  
