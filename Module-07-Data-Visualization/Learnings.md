@@ -94,11 +94,63 @@
 - Layout and styling play a significant role in improving usability and clarity.
 
 ---
+# Learning Outcomes in Data Visualization & Storytelling
 
-# Overall Learning
+## Actor Network Visualization
+- Learned to use NetworkX and scikit-network  
+- Built actor collaboration networks from datasets  
+- Applied shortest path algorithms for relationship analysis  
+- Managed large datasets and handled inconsistencies  
+- Explored network structures and connectivity patterns  
 
-- Effective visualization starts with clean and well-structured data.
-- Selecting appropriate visualization techniques is critical for accurate interpretation.
-- Animation and interactivity should enhance insight, not distract from it.
-- Different tools are suited for different types of analysis and presentation.
-- Strong visualizations support better understanding and informed decision-making.
+---
+
+## RAWGraphs
+- Learned usage of an open-source visualization tool  
+- Understood mapping of data dimensions to visual variables  
+- Explored chart customization options  
+- Exported visualizations in multiple formats  
+- Gained experience in quick exploratory visualization  
+
+---
+
+## Data Storytelling
+- Learned multiple storytelling approaches:
+  - Numbers  
+  - Charts  
+  - Text  
+  - Illustrations  
+- Understood that combining methods improves communication  
+- Focused on making data:
+  - Clear  
+  - Engaging  
+  - Memorable  
+
+---
+
+## Interactive Notebooks (Marimo)
+- Learned reactive execution in notebooks  
+- Addressed hidden state issues in traditional Jupyter notebooks  
+- Understood DAG (Directed Acyclic Graph) for dependency tracking  
+- Ensured reproducibility and consistency of outputs  
+- Worked with notebooks stored as pure Python files  
+- Executed notebooks as scripts or interactive applications  
+
+---
+
+## Narratives with Excel
+- Generated automated narratives using Excel formulas  
+- Used VLOOKUP to build reference tables from pivot data  
+- Calculated slope to determine trend direction  
+- Applied conditional logic to convert trends into descriptive text  
+- Combined text, data, and charts for dynamic storytelling  
+
+---
+
+## Narratives with Comics
+- Used Comicgen to create characters and visual scenes  
+- Integrated Google Sheets for dynamic image generation  
+- Applied IF-ELSE logic to map data clusters to narratives  
+- Transformed numerical insights into human-readable stories  
+- Used URL encoding for dynamic text rendering in images  
+- Created engaging and interactive visual storytelling experiences  
