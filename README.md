@@ -29,7 +29,7 @@ Course Link: https://tds.s-anand.net/#/
 | Module 04 | Data Sourcing | Completed |
 | Module 05 | Data preparation | Completed |
 | Module 06 | Data Analysis | Completed |
-| Module 07 | Data Visualisation | In Progress|
+| Module 07 | Data Visualisation | Completed |
 
 
 
