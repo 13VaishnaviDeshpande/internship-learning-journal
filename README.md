@@ -150,6 +150,16 @@ Course Link: https://tds.s-anand.net/#/
 - Learning the role of visualization in machine learning interpretability  
 - Using clustering and correlation analysis to understand data relationships
 -----
+# Week 7 Highlights
+
+- Explored advanced data visualization techniques using RAWGraphs for handling complex datasets  
+- Learned how to map dataset dimensions to appropriate visual elements for clearer insights  
+- Developed an understanding of data storytelling through numbers, charts, text, and illustrations  
+- Created comic-style narratives by integrating Google Sheets with Comicgen  
+- Built structured and dynamic data narratives using Excel  
+- Gained exposure to reactive notebooks (Marimo) for creating interactive and dynamic workflows  
+- Combined analytical insights with storytelling techniques to communicate data more effectively
+------
 
 ## 🔄 Weekly Update Log
 | Week | What I Learned |
@@ -161,4 +171,5 @@ Course Link: https://tds.s-anand.net/#/
 | Week 4 | Learned the fundamentals of web scraping including understanding HTML structures (tags, classes, IDs) and extracting website data using Python libraries like Requests and BeautifulSoup. Practiced parsing and cleaning HTML content, scraping structured data such as tables, handling pagination, and extracting data from PDFs. Also worked with OpenStreetMap’s Nominatim API for geolocation data and learned how to store and clean scraped data using Pandas while following ethical scraping practices and rate limits. |
 | Week 5 | Focused on data preparation and preprocessing techniques. Learned dataset cleaning using Excel (Find & Replace, Trim, removing blanks and duplicates) and Text-to-Columns for structuring raw data. Practiced quick dataset editing in VS Code, entity resolution using OpenRefine, and dataset analysis using Pandas Profiling. Also explored working with JSON APIs in Python, automated image manipulation with Pillow, and multimedia processing workflows using FFMPEG. |
 | Week 6 | Covered exploratory data analysis and advanced concepts. Learned correlation, regression, forecasting, and outlier detection. Explored SQL analytics, DuckDB, Parquet, geospatial analysis (Folium, QGIS), and network analysis techniques. |
+| Week 7 | Explored advanced visualization with RAWGraphs, applied data storytelling techniques, created comic-style narratives using Google Sheets, developed Excel-based storytelling dashboards, and worked with reactive notebook workflows using Marimo |
 
